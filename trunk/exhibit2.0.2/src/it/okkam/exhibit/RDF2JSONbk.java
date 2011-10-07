@@ -12,12 +12,12 @@ import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.util.FileManager;
 
-public class RDF2JSON {
+public class RDF2JSONbk {
 	private final String inputDatasetFileName = "resources/test/mockup.ttl";
 	private Model inputModel = null;
 	private static String baseUri = null;
 	public static void main(String argv[]) {
-		RDF2JSON rdf2json = new RDF2JSON();
+		RDF2JSONbk rdf2json = new RDF2JSONbk();
 		rdf2json.loadInputModel();
 		ResIterator resourceit=rdf2json.inputModel.listResourcesWithProperty(null);
 		System.out.println("{\"items\":\n\t[");
@@ -49,7 +49,7 @@ public class RDF2JSON {
 	private void loadInputModel() {
 		InputStream in = FileManager.get().open(inputDatasetFileName);
 		if (in == null) {
-			Log.info(RDF2JSON.class, "File: " + inputDatasetFileName
+			Log.info(RDF2JSONbk.class, "File: " + inputDatasetFileName
 					+ " not found");
 			System.exit(0);
 		}
