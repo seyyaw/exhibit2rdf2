@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/java-6-sun-1.6.0.26">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/icu4j-3.4.4.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/iri-0.8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jena-2.6.4.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jena-2.6.4-tests.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/junit-4.5.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/slf4j-api-1.5.8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/standard.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/stax-api-1.0.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/tdb-0.8.10.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/tdb-0.8.10-tests.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/wstx-asl-3.2.9.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xercesImpl-2.7.1.jar"/>
+	<classpathentry kind="lib" path="/opt/rdfstore/TDB-0.8.10/lib/arq-2.8.8.jar"/>
+	<classpathentry kind="lib" path="/opt/rdfstore/TDB-0.8.10/lib/arq-2.8.8-tests.jar"/>
+	<classpathentry kind="lib" path="/opt/rdfstore/TDB-0.8.10/lib/icu4j-3.4.4.jar"/>
+	<classpathentry kind="lib" path="/opt/rdfstore/TDB-0.8.10/lib/iri-0.8.jar"/>
+	<classpathentry kind="lib" path="/opt/rdfstore/TDB-0.8.10/lib/jena-2.6.4.jar"/>
+	<classpathentry kind="lib" path="/opt/rdfstore/TDB-0.8.10/lib/jena-2.6.4-tests.jar"/>
+	<classpathentry kind="lib" path="/opt/rdfstore/TDB-0.8.10/lib/junit-4.5.jar"/>
+	<classpathentry kind="lib" path="/opt/rdfstore/TDB-0.8.10/lib/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="/opt/rdfstore/TDB-0.8.10/lib/lucene-core-2.3.1.jar"/>
+	<classpathentry kind="lib" path="/opt/rdfstore/TDB-0.8.10/lib/slf4j-api-1.5.8.jar"/>
+	<classpathentry kind="lib" path="/opt/rdfstore/TDB-0.8.10/lib/stax-api-1.0.1.jar"/>
+	<classpathentry kind="lib" path="/opt/rdfstore/TDB-0.8.10/lib/tdb-0.8.10.jar"/>
+	<classpathentry kind="lib" path="/opt/rdfstore/TDB-0.8.10/lib/tdb-0.8.10-tests.jar"/>
+	<classpathentry kind="lib" path="/opt/rdfstore/TDB-0.8.10/lib/wstx-asl-3.2.9.jar"/>
+	<classpathentry kind="lib" path="/opt/rdfstore/TDB-0.8.10/lib/xercesImpl-2.7.1.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
