@@ -38,10 +38,10 @@ public class Rdf2Json extends HttpServlet {
 		Map logininfo=authenticate();
 		if (logininfo.containsKey(userName) && logininfo.containsValue(password)) {
 			DataModel dataModel=new DataModel();
-			String filepath=request.getServletContext().getRealPath("nobelists2.js");
+			String filepath=request.getServletContext().getRealPath("rivela.js");
 			System.out.println("path=" + filepath);
 			dataModel.creatJSON(filepath);
-		request.getRequestDispatcher("nobelists.jsp").forward(request, response);
+		request.getRequestDispatcher("rivela.jsp").forward(request, response);
 		}		
 	}
 	
