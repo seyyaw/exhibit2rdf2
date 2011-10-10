@@ -1,6 +1,6 @@
-seidm,123
+Seid,123
 luigi,321
-nicola,456
+Nicola,456
 barbara,1 2
 paolo,abcd
-hieko,1q2
+daniel,1q2
