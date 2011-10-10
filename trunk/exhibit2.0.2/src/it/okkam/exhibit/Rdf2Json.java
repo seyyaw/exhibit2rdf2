@@ -40,7 +40,8 @@ public class Rdf2Json extends HttpServlet {
 			DataModel dataModel=new DataModel();
 			String filepath=request.getServletContext().getRealPath("rivela.js");
 			System.out.println("path=" + filepath);
-			dataModel.creatJSON(filepath);
+			String contextGraph=dataModel.getContextGraph(userName);
+			dataModel.creatJSON(filepath, contextGraph);
 		request.getRequestDispatcher("rivela.jsp").forward(request, response);
 		}		
 	}
