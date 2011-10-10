@@ -5,7 +5,9 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 
 import org.json.JSONException;
@@ -29,10 +31,11 @@ public class DataModel {
 			"prefix xsd: <http://www.w3.org/2001/XMLSchema#> " +
 			"prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
 			"prefix ens: <http://models.okkam.org/ENS-meta-core-vocabulary.owl#> " +
-			"select  ?name ?lastname ?birthdate where { graph ?g { " +
-			" ?s ens:first_name ?name;" +
-			"    ens:last_name ?lastname ;" +
-			"    ens:birthdate ?birthdate . " +
+			"select  ?name ?lastname ?birthdate ?gender where { graph ?g { " +
+			"?s ens:first_name ?name ;" +
+			"ens:last_name ?lastname ; " +
+			"ens:gender ?gender ;" +
+			"ens:birthdate ?birthdate . " +
 			" } }";
 
 	public void creatJSON(String filepath) throws IOException {
@@ -54,9 +57,20 @@ public class DataModel {
 				//System.out.println(solution);
 				String name = solution.get("?name").toString();
 				String lastname = solution.get("?lastname").toString();
+				
 				String birthdate = solution.get("?birthdate").toString();
-				resultLists.add("{ label: \""+name+" "+ lastname+"\", firstName:\""+name+"\"," +
-							"lastname:\""+lastname+"\",birthdate:\""+birthdate+"\"}");
+				Date now = new Date(birthdate);
+				SimpleDateFormat simpleDateformat=new SimpleDateFormat("yyyy");
+				birthdate=simpleDateformat.format(now);
+				
+				String gender = solution.get("?gender").toString();
+				if(gender.equals("F"))
+					gender="Female";
+				else
+					gender="Male";
+				
+				resultLists.add("{ label: \""+name+" "+ lastname+"\",firstName:\""+name+"\"," +
+							"lastname:\""+lastname+"\",birthdate:\""+birthdate+"\",gender:\""+gender+"\"}");
 			}
 			int numberOfResults=resultLists.size();
 			Iterator resultitr=resultLists.iterator();
