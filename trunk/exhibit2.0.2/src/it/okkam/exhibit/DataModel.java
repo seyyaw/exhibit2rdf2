@@ -152,7 +152,7 @@ public void searchByKeyword(String filepath, String searchkey) throws IOExceptio
 	 resultitr=resultLists.iterator();	
 	 while(resultitr.hasNext()){
 		 String subject=resultitr.next().toString();
-		 xxxxx
+	//	 xxxxx
 	 }
 	
 	out.write("\n\t]\n}");
