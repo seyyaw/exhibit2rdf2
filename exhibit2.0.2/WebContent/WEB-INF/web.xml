@@ -19,4 +19,14 @@
     <servlet-name>Rdf2Json</servlet-name>
     <url-pattern>/Rdf2Json</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchBeyKeword</display-name>
+    <servlet-name>SearchBeyKeword</servlet-name>
+    <servlet-class>it.okkam.exhibit.SearchBeyKeword</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchBeyKeword</servlet-name>
+    <url-pattern>/SearchBeyKeword</url-pattern>
+  </servlet-mapping>
 </web-app>

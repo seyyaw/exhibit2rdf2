@@ -33,20 +33,25 @@ public class Rdf2Json extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String userName=request.getParameter("userName");
-		String password=request.getParameter("pwd");
-		Map logininfo=authenticate();
-		if (logininfo.containsKey(userName) && logininfo.containsValue(password)) {
-			DataModel dataModel=new DataModel();
-			String filepath=request.getServletContext().getRealPath("rivela.js");
-			System.out.println("path=" + filepath);
-			String contextGraph=dataModel.getContextGraph(userName);
-			dataModel.creatJSON(filepath, contextGraph);
-		request.getRequestDispatcher("rivela.jsp").forward(request, response);
-		}		
-	}
-	
-	
+			String userName=request.getParameter("userName");
+			String password=request.getParameter("pwd");
+			Map logininfo=authenticate();
+			//dopo il login di successo
+			if (logininfo.containsKey(userName) && logininfo.containsValue(password)) {
+				/*//creazione di modello di dati
+				DataModel dataModel=new DataModel();
+				//percorso del file di output dove json salvato
+				String filepath=request.getServletContext().getRealPath("rivela.js");
+				//ricevendo il contextGraph rilevanti
+				String contextGraph=dataModel.getContextGraph(userName);
+				dataModel.creatJSON(filepath, contextGraph);
+				//visualizzazione dei risultati
+				
+				request.getRequestDispatcher("rivela.jsp").forward(request, response);*/
+				
+				request.getRequestDispatcher("search.jsp").forward(request, response);
+			}	
+		}
 	public Map authenticate() {
 		ServletContext sc = getServletContext();
 		try {

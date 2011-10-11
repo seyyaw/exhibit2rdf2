@@ -8,7 +8,9 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -93,15 +95,11 @@ public class DataModel {
 	}
 String getContextGraph(String username){
 	String contextGraph = null;
-	String queryString = " prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> " +
-	"prefix owl: <http://www.w3.org/2002/07/owl#> " +
-	"prefix xsd: <http://www.w3.org/2001/XMLSchema#> " +
-	"prefix dc: <http://purl.org/dc/elements/1.1/>" +
-	"prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-	"prefix ens: <http://models.okkam.org/ENS-meta-core-vocabulary.owl#> " +
-	"select  ?s where { graph ?g { ?s dc:creator ?cr ." +
-	"?cr ens:first_name '"+ username+"' . } }";
-	QueryExecution queryObject = QueryExecutionFactory.sparqlService(
+	String queryString ="prefix dc: <http://purl.org/dc/elements/1.1/>" +
+						"prefix ens: <http://models.okkam.org/ENS-meta-core-vocabulary.owl#> " +
+						"select  ?s where { graph ?g { ?s dc:creator ?cr ." +
+						"?cr ens:first_name '"+ username+"' . } }";
+		QueryExecution queryObject = QueryExecutionFactory.sparqlService(
 			service, queryString);
 	try {
 		ResultSet results = queryObject.execSelect();
@@ -117,6 +115,48 @@ String getContextGraph(String username){
 	
 	return contextGraph;
 	
+}
+
+public void searchByKeyword(String filepath, String searchkey) throws IOException {
+	
+	String queryString = "SELECT ?s ?p ?o " +
+	"WHERE" +
+	"{ graph ?g {" +
+	"?s ?p ?o ." +
+	"FILTER (regex(?o, \""+searchkey+"\",\"i\"))" +
+			"}" +
+			"}";
+	
+	File exhibitDataPatho = new File(filepath);
+	exhibitDataPatho.delete();
+	FileWriter exhibitDataPath = new FileWriter(filepath,true);
+	BufferedWriter out = new BufferedWriter(exhibitDataPath);
+	out.write("{\"items\":\n\t[");
+	
+	QueryExecution queryObject = QueryExecutionFactory.sparqlService(
+			service, queryString);
+	Set resultLists=null;
+	Iterator resultitr=null;
+	try {
+		ResultSet results = queryObject.execSelect();
+		 resultLists=new HashSet();
+		while( results.hasNext()) {				
+			QuerySolution solution = results.nextSolution();
+			//System.out.println(solution);
+			String subject = solution.get("?s").toString();
+			resultLists.add(subject);
+		}
+	} finally {
+		queryObject.close();
+	}
+	 resultitr=resultLists.iterator();	
+	 while(resultitr.hasNext()){
+		 String subject=resultitr.next().toString();
+		 xxxxx
+	 }
+	
+	out.write("\n\t]\n}");
+	out.close();
 }
 	public static void main(String... argv) throws IOException {
 		DataModel datamodel = new DataModel();
