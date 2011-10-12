@@ -22,7 +22,7 @@
                 <div ex:role="view"></div>
             </td>
         
-         <!-- 
+         	<!-- 
             <td ex:role="viewPanel">
             	 <div ex:role="view"
 				     ex:viewClass="Timeline"
@@ -44,8 +44,7 @@
             <td width="25%">
             	 <div>Search Rivela content:</div>
             	 <div  ex:role="facet" ex:facetClass="TextSearch"></div>
-             	 <div ex:role="facet" ex:expression=".birthdate" ex:facetLabel="Birth Date"></div>
-             	 <div ex:role="facet" ex:expression=".gender" ex:facetLabel="Gender"></div>
+             	 <div ex:role="facet" ex:expression=".type" ex:facetLabel="Type"></div>
             </td>
         </tr>
     </table>
