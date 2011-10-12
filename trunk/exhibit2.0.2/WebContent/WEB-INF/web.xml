@@ -29,4 +29,14 @@
     <servlet-name>SearchBeyKeword</servlet-name>
     <url-pattern>/SearchBeyKeword</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RemoteDataSetViz</display-name>
+    <servlet-name>RemoteDataSetViz</servlet-name>
+    <servlet-class>it.okkam.exhibit.cq.RemoteDataSetViz</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RemoteDataSetViz</servlet-name>
+    <url-pattern>/RemoteDataSetViz</url-pattern>
+  </servlet-mapping>
 </web-app>
