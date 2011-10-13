@@ -46,6 +46,7 @@ public class RDF2JSONbk {
 		}
 		System.out.println("\n\t]\n}");
 	}
+
 	private void loadInputModel() {
 		InputStream in = FileManager.get().open(inputDatasetFileName);
 		if (in == null) {

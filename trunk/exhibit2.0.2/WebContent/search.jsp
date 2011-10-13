@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Search the Rivela TDB !</h1>
-		<form action="/exhibit2.0.2/SearchBeyKeword" method="GET">
+		<form action="/exhibit2.0.2/CompetencyQuestion" method="GET">
 		Search Keywords: <input type="text" name="searchkey" /><br />
 			<input type="submit" value="Search" />
 		</form>  	

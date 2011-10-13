@@ -31,12 +31,12 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>RemoteDataSetViz</display-name>
-    <servlet-name>RemoteDataSetViz</servlet-name>
-    <servlet-class>it.okkam.exhibit.cq.RemoteDataSetViz</servlet-class>
+    <display-name>CompetencyQuestion</display-name>
+    <servlet-name>CompetencyQuestion</servlet-name>
+    <servlet-class>it.okkam.exhibit.cq.CompetencyQuestion</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>RemoteDataSetViz</servlet-name>
-    <url-pattern>/RemoteDataSetViz</url-pattern>
+    <servlet-name>CompetencyQuestion</servlet-name>
+    <url-pattern>/CompetencyQuestion</url-pattern>
   </servlet-mapping>
 </web-app>
