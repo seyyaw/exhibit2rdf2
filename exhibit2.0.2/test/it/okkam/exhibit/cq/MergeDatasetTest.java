@@ -2,6 +2,8 @@ package it.okkam.exhibit.cq;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,8 +18,8 @@ public class MergeDatasetTest {
 	
 
 	@Test
-	public void testCallServices() {
-		remoteService.callRemoteService();
+	public void testCallServices() throws IOException {
+		remoteService.callRemoteService(null);
 	}
 
 }

@@ -48,8 +48,8 @@ public class Rdf2Json extends HttpServlet {
 				//visualizzazione dei risultati
 				
 				request.getRequestDispatcher("rivela.jsp").forward(request, response);*/
-				
-				request.getRequestDispatcher("search.jsp").forward(request, response);
+				//request.getRequestDispatcher("search.jsp").forward(request, response);
+				request.getRequestDispatcher("CompetencyQuestion.jsp").forward(request, response);
 			}	
 		}
 	public Map authenticate() {
