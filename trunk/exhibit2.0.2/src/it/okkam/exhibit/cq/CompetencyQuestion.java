@@ -25,9 +25,9 @@ public class CompetencyQuestion extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		MergeDataset remoteDataModel=new MergeDataset();
+		GraphManager graphManager=new GraphManager();
 		String filepath=request.getServletContext().getRealPath("remoteRivela.js");
-		remoteDataModel.callRemoteService(filepath);	
+		graphManager.saveJSON(filepath);	
 		System.out.println(filepath);
 		request.getRequestDispatcher("cq.jsp").forward(request, response);
 	}
